@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/TestWorld.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/ExtraMovePowerUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BattleButtons.tscn" type="PackedScene" id=6]
+
+[node name="TestWorld" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 144.0 ],
+"_edit_vertical_guides_": [ 96.0 ]
+}
+
+[node name="StatsPanelBg" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StatsPanelBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -160.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="BackgroundColour" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundColour"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 6, 1610612738, 0, 7, 1610612737, 0, 8, 1610612737, 0, 9, 1610612737, 0, 10, 1610612737, 0, 11, 1610612737, 0, 12, 1610612737, 0, 13, 1610612737, 0, 14, 1610612737, 0, 15, -1073741822, 0, 65542, -1610612735, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, -1073741823, 0, 131078, -1610612735, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, -1073741823, 0, 196614, -1610612735, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, -1073741823, 0, 262150, -1610612735, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, -1073741823, 0, 327686, -1610612735, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, -1073741823, 0, 393222, -1610612735, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, -1073741823, 0, 458758, -1610612735, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, -1073741823, 0, 524294, -1610612734, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 2, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 136 )
+
+[node name="Player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 136, 8 )
+
+[node name="ExtraMovePowerUp" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 168, 120 )
+
+[node name="ExtraMovePowerUp2" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 200, 72 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 72 )
+current = true
+
+[node name="BattleButtons" parent="." instance=ExtResource( 6 )]
